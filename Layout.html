@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--  Format Style sheet -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Style the header */
+    header {
+      background-color: #4b4b4b;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+
+    /* Create two columns/boxes that floats next to each other */
+    nav {
+      float: left;
+      width: 40%;
+      height: 500px;
+      font-size: 20px;
+      /* only for demonstration, should be removed */
+      background: #007a6d;
+      padding: 20px;
+    }
+
+    /* Style the list inside the menu */
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    article {
+      float: left;
+      padding: 20px;
+      width: 60%;
+      background-color: #f1f1f1;
+      height: 500px;
+      /* only for demonstration, should be removed */
+    }
+
+    /* Clear floats after the columns */
+    section:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Style the footer */
+    footer {
+      background-color: #8c8c8c;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+    @media (max-width: 600px) {
+
+      nav,
+      article {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 style = "color:#fae105;">Run For TudTu !</h1>
+
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <img src="http://www.runitagency.com/wp-content/uploads/2015/06/logo_run_it_agency_orange_white.png"  width="200" height="200">
+      </ul>
+    </nav>
+
+    <article>
+      <h2>Register for Tudtu Run</h2>
+
+      <form method="post" action="resultlayout.php">
+        Gender :
+        <input type="radio" name="gender" value="male" checked> Male
+        <input type="radio" name="gender" value="female"> Female
+        <input type="radio" name="gender" value="other"> Other
+        <br><br>
+
+        First name :
+        <input type="text" name="firstname" value="">
+        <br><br>
+
+        Last name :
+        <input type="text" name="lastname" value="">
+        <br><br>
+
+        Date Of Birth :
+        <input type="text" name="DateOfBirth" value="DD/MM/YYYY">
+        <br><br>
+
+        Address :
+        <input type="text" name="address" value="" >
+        <br><br>
+
+        Tel :
+        <input type="text" name="Tel" value="">
+        <br><br>
+
+        Email :
+        <input type="text" name="email" value="">
+        <br><br>
+
+        ประเภทการแข่งขัน :
+        <input list="Type" name="Type">
+        <datalist id="Type">
+          <option value="5 Km">
+          <option value="10 Km">
+          <option value="21 Km">
+          <option value="42 Km">
+        </datalist>
+        <br><br>
+
+        ขนาดเสื้อ :
+        <input type="radio" name="size" value="S" checked> S
+        <input type="radio" name="size" value="M" checked> M
+        <input type="radio" name="size" value="L" checked> L
+        <input type="radio" name="size" value="XL" checked> XL
+        <br><br>
+        <input type="submit" value="Confirm">
+      </form>
+    </article>
+  </section>
+
+  <footer>
+    <p>Ads Tel.+66123456789</p>
+  </footer>
+
+</body>
+
+</html>

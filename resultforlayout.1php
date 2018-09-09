@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>CSS Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!--  Format Style sheet -->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* Style the header */
+    header {
+      background-color: #4b4b4b;
+      padding: 30px;
+      text-align: center;
+      font-size: 35px;
+      color: white;
+    }
+
+    /* Create two columns/boxes that floats next to each other */
+    nav {
+      float: left;
+      width: 40%;
+      height: 500px;
+      font-size: 20px;
+      /* only for demonstration, should be removed */
+      background: #007a6d;
+      padding: 20px;
+    }
+
+    /* Style the list inside the menu */
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    article {
+      float: left;
+      padding: 20px;
+      width: 60%;
+      background-color: #f1f1f1;
+      height: 500px;
+      /* only for demonstration, should be removed */
+    }
+
+    /* Clear floats after the columns */
+    section:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Style the footer */
+    footer {
+      background-color: #8c8c8c;
+      padding: 10px;
+      text-align: center;
+      color: white;
+    }
+
+    /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+    @media (max-width: 600px) {
+
+      nav,
+      article {
+        width: 100%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 style = "color:#fae105;">Run For TudTu !</h1>
+
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+            <img src="http://www.runitagency.com/wp-content/uploads/2015/06/logo_run_it_agency_orange_white.png"  width="200" height="200">
+      </ul>
+    </nav>
+
+    <article>
+      <h2>Register for Tudtu Run</h2>
+<?php
+// define variables and set to empty values
+$firstname = $lastname = $DateOfBirth = $address = $Tel = $Type =$size = $email = $gender = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $firstname = test_input($_POST["firstname"]);
+  $lastname = test_input($_POST["lastname"]);
+  $DateOfBirth = test_input($_POST["DateOfBirth"]);
+  $address = test_input($_POST["address"]);
+  $Tel = test_input($_POST["Tel"]);
+  $Type = test_input($_POST["Type"]);
+  $size = test_input($_POST["size"]);
+  $email = test_input($_POST["email"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+echo "<h2>Your Input:</h2>";
+echo $firstname;
+echo "<br>";
+echo $lastname;
+echo "<br>";
+echo $DateOfBirth;
+echo "<br>";
+echo $address;
+echo "<br>";
+echo $Tel;
+echo "<br>";
+echo $Type;
+echo "<br>";
+echo $size;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $gender;
+?>
+</article>
+</section>
+
+<footer>
+<p>Ads Tel.+66123456789</p>
+</footer>
+
+</body>
+
+</html>
